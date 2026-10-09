@@ -1,0 +1,479 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background: linear-gradient(135deg, #c9f1f3, #f5dce8);
+    transition: 0.4s;
+}
+
+.cartao {
+    width: 100%;
+    max-width: 720px;
+    padding: 45px;
+    background: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0 20px 45px #0002;
+    transition: 0.4s;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 42px;
+    color: #263b58;
+}
+
+#tema {
+    width: 58px;
+    height: 58px;
+    border: none;
+    border-radius: 50%;
+    background: #6757e8;
+    color: #ffffff;
+    font-size: 23px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#tema:hover {
+    transform: scale(1.08);
+}
+
+.entrada {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+#tarefa {
+    flex: 1;
+    min-width: 0;
+    padding: 18px 20px;
+    border: 2px solid #e3e3e3;
+    border-radius: 13px;
+    outline: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+#tarefa:focus {
+    border-color: #6757e8;
+}
+
+#adicionar {
+    border: none;
+    border-radius: 13px;
+    padding: 16px 23px;
+    background: #6757e8;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#adicionar:hover {
+    background: #5142d1;
+    transform: scale(1.03);
+}
+
+.foto {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 25px;
+}
+
+.foto img {
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #6757e8;
+    display: block;
+}
+
+#abrirAudio,
+#botaoPrincipais {
+    display: block;
+    width: 100%;
+    margin: 0 auto 12px;
+    border: none;
+    border-radius: 13px;
+    padding: 14px 22px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#abrirAudio {
+    background: #6757e8;
+}
+
+#botaoPrincipais {
+    background: #e4a51c;
+}
+
+#abrirAudio:hover {
+    background: #5142d1;
+    transform: scale(1.02);
+}
+
+#botaoPrincipais:hover {
+    background: #ca8f0e;
+    transform: scale(1.02);
+}
+
+#principaisContainer {
+    display: none;
+    margin: 15px 0 25px;
+    padding: 20px;
+    background: #fff8df;
+    border: 2px solid #f1d477;
+    border-radius: 16px;
+}
+
+#principaisContainer h2 {
+    margin-bottom: 15px;
+    color: #8a6500;
+    font-size: 22px;
+}
+
+#principaisContainer h2 i,
+.textoPrincipal i {
+    color: #e4a51c;
+}
+
+#listaPrincipais {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.principalTarefa {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 13px 15px;
+    background: #ffffff;
+    border-radius: 12px;
+    color: #333333;
+    font-size: 16px;
+}
+
+.principalTarefa .textoPrincipal {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.principalTarefa.concluidaPrincipal .textoPrincipal {
+    text-decoration: line-through;
+    color: #888888;
+}
+
+.acoesPrincipal {
+    display: flex;
+    gap: 7px;
+    flex-shrink: 0;
+}
+
+.acoesPrincipal button {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.concluirPrincipal {
+    background: #35a854;
+}
+
+.excluirPrincipal {
+    background: #e05252;
+}
+
+#semPrincipais {
+    color: #987c31;
+    font-size: 14px;
+    text-align: center;
+}
+
+#lista {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tarefa {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 65px;
+    padding: 15px 18px;
+    background: #f4f4f7;
+    border-radius: 13px;
+    color: #333333;
+    font-size: 18px;
+    transition: 0.3s;
+    gap: 10px;
+}
+
+.texto {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    padding-right: 15px;
+}
+
+.acoes {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.acoes button {
+    width: 43px;
+    height: 43px;
+    border: none;
+    border-radius: 9px;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.acoes button:hover {
+    transform: scale(1.08);
+}
+
+.concluir {
+    background: #35a854;
+}
+
+.excluir {
+    background: #e05252;
+}
+
+.concluida {
+    background: #e8f5e9;
+}
+
+.concluida .texto {
+    text-decoration: line-through;
+    color: #888888;
+}
+
+footer {
+    text-align: center;
+    margin-top: 25px;
+    color: #999999;
+    font-size: 16px;
+}
+
+#gifPrincipal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: calc(55% + 375px);
+    transform: translateY(-50%);
+    width: 200px;
+    z-index: 9999;
+}
+
+#gifPrincipal img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+#alertaAudio {
+    display: none;
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 10000;
+}
+
+.caixaAlerta {
+    width: 90%;
+    max-width: 400px;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 45px #0005;
+}
+
+.caixaAlerta h2 {
+    color: #263b58;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.caixaAlerta p {
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+.caixaAlerta button {
+    border: none;
+    border-radius: 10px;
+    padding: 12px 18px;
+    margin: 5px;
+    background: #6757e8;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+body.escuro {
+    background: linear-gradient(135deg, #111827, #1f2937);
+}
+
+body.escuro .cartao {
+    background: #1f2937;
+    box-shadow: 0 20px 45px #0008;
+}
+
+body.escuro h1 {
+    color: #ffffff;
+}
+
+body.escuro #tarefa {
+    background: #374151;
+    border-color: #4b5563;
+    color: #ffffff;
+}
+
+body.escuro #tarefa::placeholder {
+    color: #aaaaaa;
+}
+
+body.escuro .tarefa,
+body.escuro .principalTarefa {
+    background: #374151;
+    color: #ffffff;
+}
+
+body.escuro .concluida {
+    background: #293c30;
+}
+
+body.escuro footer {
+    color: #aaaaaa;
+}
+
+body.escuro #principaisContainer {
+    background: #3b331d;
+    border-color: #665728;
+}
+
+body.escuro #principaisContainer h2 {
+    color: #f5d879;
+}
+
+body.escuro #semPrincipais {
+    color: #d4bd6c;
+}
+
+body.escuro .caixaAlerta {
+    background: #1f2937;
+}
+
+body.escuro .caixaAlerta h2 {
+    color: #ffffff;
+}
+
+body.escuro .caixaAlerta p {
+    color: #cccccc;
+}
+
+@media (max-width: 1150px) {
+    body {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .cartao {
+        padding: 25px;
+        border-radius: 22px;
+    }
+
+    #gifPrincipal {
+        position: static;
+        transform: none;
+        width: 180px;
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    .cartao {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .entrada {
+        flex-direction: column;
+    }
+
+    #adicionar {
+        width: 100%;
+    }
+
+    .foto img {
+        width: 175px;
+        height: 175px;
+    }
+
+    .tarefa {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .acoes {
+        gap: 5px;
+    }
+
+    .acoes button {
+        width: 36px;
+        height: 36px;
+    }
+
+    .principalTarefa {
+        padding: 10px;
+        font-size: 14px;
+    }
+}

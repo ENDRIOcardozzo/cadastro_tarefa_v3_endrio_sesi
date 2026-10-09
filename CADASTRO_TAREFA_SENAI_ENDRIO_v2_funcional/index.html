@@ -1,0 +1,93 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="cartao">
+
+        <header>
+            <h1>Minhas tarefas</h1>
+            <button id="tema" aria-label="Alternar tema">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </header>
+
+        <div class="entrada">
+            <input id="tarefa" type="text" placeholder="Digite uma nova tarefa...">
+            <button id="adicionar">
+                <i class="fa-solid fa-plus"></i>
+                Adicionar
+            </button>
+        </div>
+
+        <div class="foto">
+            <img src="FOTO.jpg" alt="Foto">
+        </div>
+
+        <div id="gifPrincipal" class="gif-oculto">
+            <H2>EASTER EGG...
+            </H2>
+            <img src="gato.gif" alt="Gato animado">
+        </div>
+
+        <button id="abrirAudio">
+            <i class="fa-solid fa-volume-high"></i>
+            Abrir áudio
+        </button>
+
+        <button id="botaoPrincipais">
+            <i class="fa-solid fa-star"></i>
+            Principais tarefas
+        </button>
+
+        <div id="principaisContainer">
+            <h2>
+                <i class="fa-solid fa-star"></i>
+                Principais tarefas
+            </h2>
+
+            <ul id="listaPrincipais"></ul>
+
+            <p id="semPrincipais">
+                Nenhuma tarefa principal adicionada.
+            </p>
+        </div>
+
+        <ul id="lista"></ul>
+
+        <footer>
+            <span id="contador">0 tarefas na lista</span>
+        </footer>
+
+    </div>
+
+    <div id="alertaAudio">
+        <div class="caixaAlerta">
+            <h2>Áudio</h2>
+            <p>Clique no botão abaixo para reproduzir.</p>
+
+            <button id="reproduzirAudio">
+                <i class="fa-solid fa-play"></i>
+                Reproduzir áudio
+            </button>
+
+            <button id="fecharAudio">Fechar</button>
+        </div>
+    </div>
+
+    <audio id="audioPapoi" preload="auto">
+        <source src="papoi.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
